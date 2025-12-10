@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felices 2 Años Juntos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Variables de Colores --- */
+        :root {
+            --color-principal: #ff8fa3; /* Rosa suave */
+            --color-fondo: #fff0f3;     /* Fondo muy clarito */
+            --color-texto: #4a4a4a;     /* Gris oscuro para leer bien */
+            --blanco: #ffffff;
+            --sombra: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* --- Estilos Generales --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            padding-top: 70px; /* Espacio para el header fijo */
+            line-height: 1.6;
+        }
+
+        /* --- Header Fijo --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background-color: var(--blanco);
+            box-shadow: var(--sombra);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--color-principal);
+            text-align: center;
+        }
+
+        /* --- Contenedores de Sección --- */
+        section {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* --- Sección Carta --- */
+        .carta-content {
+            background: var(--blanco);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--sombra);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--color-principal);
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* --- Sección Galería (2 Columnas) --- */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Siempre 2 columnas */
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .foto-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 1 / 1; /* Hace que las fotos sean cuadradas */
+            box-shadow: var(--sombra);
+            transition: transform 0.3s ease;
+        }
+
+        .foto-container:hover {
+            transform: scale(1.02);
+        }
+
+        .foto-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- Sección Final --- */
+        #final {
+            margin-bottom: 100px; /* Espacio extra abajo */
+        }
+
+        .dedicatoria {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-principal);
+        }
+
+        /* --- Widget Flotante de Música --- */
+        .music-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-principal);
+            color: var(--blanco);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 143, 163, 0.5);
+            z-index: 1001;
+            transition: transform 0.2s;
+            border: none;
+            outline: none;
+        }
+
+        .music-widget:active {
+            transform: scale(0.95);
+        }
+
+        /* Animación suave cuando suena la música */
+        .music-widget.playing {
+            animation: latido 1.5s infinite;
+        }
+
+        @keyframes latido {
+            0% { box-shadow: 0 0 0 0 rgba(255, 143, 163, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 143, 163, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 143, 163, 0); }
+        }
+
+        /* Icono simple usando CSS puro para no depender de librerías */
+        .icon-play, .icon-pause {
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+
+        .icon-play {
+            border-style: solid;
+            border-width: 10px 0 10px 18px;
+            border-color: transparent transparent transparent white;
+            margin-left: 4px; /* Ajuste óptico */
+        }
+
+        .icon-pause {
+            width: 18px;
+            height: 20px;
+            border-left: 6px solid white;
+            border-right: 6px solid white;
+        }
+
+        /* Responsive ajustes menores */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.4rem; }
+            .carta-content { padding: 25px; }
+            h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Felices 2 años juntos mi vida ❤️</h1>
+    </header>
+
+    <section id="introduccion">
+        <div class="carta-content">
+            <h2>Mi querida persona favorita,</h2>
+            <p>
+                No puedo creer que ya hayan pasado dos años. Parece que fue ayer cuando empezamos este camino juntos, pero a la vez siento que te conozco de toda la vida.
+            </p>
+            <p>
+                Aunque haya muchas veces que no lo diga, quiero que sepas que cada día a tu lado es como un tesoro que guardo siempre en mi corazón.
+            </p>
+            <p>
+                Gracias por cada risa, por cada momento de apoyo y por ser mi refugio. Estos 730 días han sido los mejores de mi vida simplemente porque tú estás en ellos.
+            </p>
+            <p>
+                He recopilado algunos de nuestros momentos favoritos aquí abajo...
+            </p>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <h2>Nuestros Recuerdos</h2>
+        <div class ="galeria-grid" id="contenedor-fotos">
+            </div>
+    </section>
+
+    <script>
+        const totalFotos = 40;
+        const contenedor = document.getElementById('contenedor-fotos');
+        let htmlContent = '';
+
+        for(let i = 1; i <= totalFotos; i++) {
+            const fotoPath = `fotos/foto (${i}).jpg`;
+            htmlContent += `
+                <div class="foto-container">
+                    <img src="${fotoPath}" alt="Foto (${i})" loading="lazy">
+                </div>
+            `;
+        }
+        contenedor.innerHTML = htmlContent;
+    </script>
+
+    <section id="final">
+        <div class="carta-content">
+            <p class="dedicatoria">"Te elegiría a ti mil veces más, sin dudarlo ni un segundo."</p>
+            <br>
+            <p>Te amo infinitamente.</p>
+        </div>
+    </section>
+
+    <audio id="audio-player" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <button id="music-btn" class="music-widget" title="Reproducir/Pausar Música">
+        <span id="icon-state" class="icon-play"></span>
+    </button>
+
+    <script>
+        // Lógica del Reproductor de Música
+        const audio = document.getElementById('audio-player');
+        const btn = document.getElementById('music-btn');
+        const icon = document.getElementById('icon-state');
+        let isPlaying = false;
+
+        btn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                icon.className = 'icon-play';
+                btn.classList.remove('playing');
+                isPlaying = false;
+            } else {
+                audio.play().then(() => {
+                    icon.className = 'icon-pause';
+                    btn.classList.add('playing');
+                    isPlaying = true;
+                }).catch(error => {
+                    console.log("Error al reproducir (el navegador puede bloquear el autoplay):", error);
+                    alert("Haz clic de nuevo para reproducir la música.");
+                });
+            }
+        });
+
+        // Intentar iniciar la música suavemente (opcional)
+        // Nota: La mayoría de navegadores bloquean el audio automático hasta que el usuario interactúa.
+    </script>
+
+</body>
+</html>
